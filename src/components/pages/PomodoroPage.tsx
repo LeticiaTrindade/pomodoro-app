@@ -65,7 +65,7 @@ export default function PomodoroPage() {
       {/* Rodapé */}
       <footer className={`text-xs text-center transition-colors ${theme === 'dark' ? 'text-slate-500' : 'text-slate-500'
         }`}>
-        Feito com ❤️ para estudos | Letícia Trindade
+        Feito com ❤️ para estudos | <a href='https://github.com/leticiatrindade' target='_blank' rel='noopener noreferrer'>Letícia Trindade</a>
       </footer>
     </main>
   );
