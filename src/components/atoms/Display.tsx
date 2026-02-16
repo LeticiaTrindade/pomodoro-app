@@ -4,16 +4,6 @@ export const Display = () => {
 
   const { timeLeft, sessionType } = usePomodoro();
 
-  const getSessionColor = () => {
-
-    switch (sessionType) {
-      case 'work': return 'from-red-500 to-orange-500';
-      case 'short': return 'from-emerald-500 to-teal-500';
-      case 'long': return 'from-blue-500 to-indigo-500';
-      default: return 'from-slate-500 to-slate-600';
-    }
-  };
-
   return (
     <div className="w-full flex flex-col items-center">
       {/* Tempo Principal */}

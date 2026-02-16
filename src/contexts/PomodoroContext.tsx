@@ -31,7 +31,7 @@ export const PomodoroProvider = ({ children }: { children: ReactNode }) => {
   const [isRunning, setIsRunning] = useState(false);
   const [workSessions, setWorkSessions] = useState(0);
 
-  const intervalRef = useRef<NodeJS.Timeout>();
+ const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
 
   // 2. HELPERS (FORMATAÇÃO E SOM)
