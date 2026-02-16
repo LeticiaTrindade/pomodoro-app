@@ -2,7 +2,7 @@ import { usePomodoro } from '../../contexts/PomodoroContext';
 
 export const Display = () => {
 
-  const { timeLeft, sessionType } = usePomodoro();
+  const { timeLeft } = usePomodoro();
 
   return (
     <div className="w-full flex flex-col items-center">
