@@ -5,7 +5,6 @@ import { SessionInfo } from '../../components/molecules/SessionInfo';
 import { ThemePicker } from '../../components/molecules/ThemePicker';
 import { Settings } from "../../components/organisms/Settings";
 import { Logo } from '../../assets/Logo';
-import logo from '../../assets/logo.svg';
 
 export default function PomodoroPage() {
   const { theme } = useTheme();
