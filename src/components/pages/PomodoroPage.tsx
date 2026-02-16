@@ -22,7 +22,6 @@ export default function PomodoroPage() {
 
       <header className={`text-center transition-all ${theme === 'dark' ? 'text-slate-300' : ''}`}>
         <div className='flex'>
-          {/* <img src={logo}/> */}
           <Logo
             className="w-12 h-12 mt-[-8px] md:w-16 md:h-16 mt-[-10px] transition-all duration-500 hover:scale-110"
             style={{ color: 'hsl(var(--accent-h), var(--accent-s), var(--accent-l))' }}

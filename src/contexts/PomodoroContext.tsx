@@ -118,7 +118,7 @@ export const PomodoroProvider = ({ children }: { children: ReactNode }) => {
         if (prev <= 1) {
           if (intervalRef.current) clearInterval(intervalRef.current);
           
-          handleSessionEnd(); // Agora o TS não vai reclamar aqui
+          handleSessionEnd();
           playBeep(); 
           return 0; 
         }
