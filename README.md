@@ -1,73 +1,84 @@
-# React + TypeScript + Vite
+# 🍅 Pomodoro Timer React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Pomodoro Timer moderno construído com React + TypeScript**. Interface glassmorphism, customização completa de cores/temas e transições automáticas entre sessões.
 
-Currently, two official plugins are available:
+## ✨ **Funcionalidades**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **⏰ Timer Pomodoro completo(configurável)** (25m/5m/15m)
+- **🔄 Transição automática** entre sessões (4 trabalhos → pausa longa)
+- **🎨 5 cores customizáveis** + tema claro/escuro
+- **📱 Design responsivo** mobile-first
+- **🔊 Som nativo BI-BIP** (Web Audio API)
+- **⚙️ Configurações persistentes** (localStorage)
+- **♿ Acessibilidade completa** (ARIA)
 
-## React Compiler
+## 🛠️ **Stack Tecnológica**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+Frontend: React 18 + TypeScript
+Estilização: TailwindCSS + CSS HSL Vars
+Estado: Context API (2 contextos)
+Persistência: localStorage
+Animações: requestAnimationFrame + CSS transitions
+Som: Web Audio API (sem dependências)
+Build: Vite
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📱 **Demo**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+[https://ritual-pomodoro.vercel.app/](https://ritual-pomodoro.vercel.app/)
+
+
+## 🚀 **Como Usar**
+
+```bash
+# Clone o projeto
+git clone https://github.com/LeticiaTrindade/pomodoro-app.git
+cd pomodoro-app
+
+# Instale dependências
+npm install
+
+# Rode localmente
+npm run dev
+
+# Build para produção
+npm run build
 ```
+
+## 🎮 **Como Funciona**
+
+```
+1. Configurações ⚙️ → Defina tempos (segundos para teste)
+2. Escolha cor 💜 → Rosa, Roxo, Azul, Verde...
+3. ▶️ Play → timer rosa
+4. 00:00 → BI-BIP-BI-BIP + "Pausa Curta ☕"
+5. ▶️ → Conta pausa automaticamente
+6. 4 sessões → Pausa Longa automática ✨
+```
+
+## 🏗️ **Estrutura do Projeto**
+
+```
+src/
+├── assets/
+│   └── Logo.tsx              # Componente SVG da Logo
+├── components/
+│   ├── atoms/                # Componentes básicos e únicos
+│   │   ├── Display.tsx       # O cronômetro (ex: 00:09)
+│   │   └── IconButton.tsx    # Botões de controle (Play, Pause, Reset)
+│   ├── molecules/            # Combinação de átomos
+│   │   ├── SessionInfo.tsx   # Badge de status (Pausa Curta/Trabalho)
+│   │   ├── ThemePicker.tsx   # Seletor de cores HSL e Modo Claro/Escuro
+│   │   └── TimerControls.tsx # Grupo de botões de controle
+│   └── organisms/            # Seções complexas da interface
+│       └── Settings.tsx      # Painel de configurações de tempo
+├── contexts/                 # Gerenciamento de estado global
+│   ├── ThemeContext.tsx      # Lógica de cores HSL e temas
+│   └── PomodoroContext.tsx   # Lógica do timer, intervalos e sons
+├── pages/
+│   └── PomodoroPage.tsx      # View principal que monta o app
+├── index.css                 # Configurações globais e Tailwind
+├── App.tsx                   # Provedores de contexto e roteamento
+└── main.tsx                  # Ponto de entrada do React
