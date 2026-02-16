@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --accent-h: 210;
+    --accent-s: 40%;
+    --accent-l: 50%;
+    --accent-fg-h: 210;
+    --accent-fg-s: 40%;
+    --accent-fg-l: 40%;
+  }
+  .dark {
+    --accent-l: 60%;
+    --accent-fg-l: 70%;
+  }
+}
+
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+  }
+}
+
+html.dark {
+  background: black !important;
+  color: white !important;
+}
+html:not(.dark) {
+  background: white !important;
+  color: black !important;
+}
