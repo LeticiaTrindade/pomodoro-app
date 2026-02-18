@@ -1,6 +1,7 @@
 # 🍅 Pomodoro Timer React
 
 **Pomodoro Timer moderno construído com React + TypeScript**. Interface glassmorphism, customização completa de cores/temas e transições automáticas entre sessões.
+Baseado neste [projeto](https://roadmap.sh/projects/pomodoro-timer) do Roadmap.sh.
 
 ## ✨ **Funcionalidades**
 
